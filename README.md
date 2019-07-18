@@ -4,7 +4,7 @@
 ![自定义投票控件](https://github.com/xuliangliang1992/VotingView/blob/master/VotingView.jpg)
 # 1、计算左右布局的长度
 ```Android
-		float leftLength;
+	float leftLength;
         float rightLength;
         //一边为0人时的最短距路
         float minLength = 120 + getHeight();
@@ -31,7 +31,7 @@
 # 2、绘制左边布局
 **先画半圆，再画梯型，最后填充颜色**
 ```Android
-		//画半圆
+	//画半圆
         RectF leftOval = new RectF(0, 10, getHeight() - 10, getHeight() - 10);
         mPath.moveTo(getHeight() / 2 - 5, getHeight() / 2);
         mPath.arcTo(leftOval, 90, 180);
@@ -55,7 +55,7 @@
 # 2、绘制右边布局
 **先画半圆，再画梯型，最后填充颜色**
 ```Android
-		//画右边半圆
+	//画右边半圆
         RectF rightOval = new RectF(getWidth() - getHeight(), 0, getWidth(), getHeight());
         mPath.moveTo(getWidth() - getHeight() / 2, getHeight() / 2);
         mPath.arcTo(rightOval, -90, 180);
@@ -76,7 +76,7 @@
 
 # 3、画中间白线
 ```Android
-		//画中间白线
+	//画中间白线
         mPath.moveTo(leftLength + mInclination - 10, 0);
         mPath.lineTo(leftLength + mInclination + 10, 0);
         mPath.lineTo(leftLength - mInclination + 10, getHeight());
@@ -89,7 +89,7 @@
 
 # 4、画文字
 ```Android
-		String leftText = String.valueOf(leftNum);
+	String leftText = String.valueOf(leftNum);
         String rightText = String.valueOf(rightNum);
 
         mPaint.setColor(textColor);
